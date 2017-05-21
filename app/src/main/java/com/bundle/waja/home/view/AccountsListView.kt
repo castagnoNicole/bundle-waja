@@ -23,6 +23,7 @@ class AccountsListView : RecyclerView {
 
     init {
         adapter = accountAdapter
-        layoutManager = GridLayoutManager(context, 2)
+        layoutManager = GridLayoutManager(context, 3)
+        addItemDecoration(AccountItemDecoration())
     }
 }
