@@ -1,6 +1,5 @@
 package com.bundle.waja.home.view
 
-import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
@@ -17,7 +16,6 @@ class AccountAdapter(var accounts: List<AccountModel>): RecyclerView.Adapter<Acc
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
         val view = AccountView(parent.context).apply {
             layoutParams = ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
-            setBackgroundColor(Color.LTGRAY)
         }
 
         return AccountViewHolder(view)
@@ -29,4 +27,3 @@ class AccountAdapter(var accounts: List<AccountModel>): RecyclerView.Adapter<Acc
 
     override fun getItemCount() = accounts.size
 }
-
