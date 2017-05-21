@@ -1,4 +1,4 @@
 package com.bundle.waja.home
 
-data class AccountModel(val accountName: String, val accountEmail: String)
+data class AccountModel(val name: String, val email: String)
 
