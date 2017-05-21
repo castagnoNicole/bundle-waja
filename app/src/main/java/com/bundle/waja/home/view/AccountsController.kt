@@ -20,6 +20,8 @@ class AccountsController : Controller(), AccountScreen {
         presenter.view = this
         val view = inflater.inflate(R.layout.accounts_controller, container, false) as LinearLayout
         val accountListView = view.findViewById(R.id.accounts_list) as AccountsListView
+        
+        presenter.onViewReady()
 
         return  view
     }
