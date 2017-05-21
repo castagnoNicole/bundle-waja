@@ -7,7 +7,8 @@ import butterknife.bindView
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
-import com.bundle.waja.home.AccountsController
+import com.bundle.waja.home.view.AccountsController
+import com.bundle.waja.home.view.AccountsListView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var router: Router
