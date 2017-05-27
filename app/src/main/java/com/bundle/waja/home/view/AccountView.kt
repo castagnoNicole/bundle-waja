@@ -9,6 +9,7 @@ import com.bundle.waja.R
 import com.bundle.waja.home.AccountModel
 
 class AccountView: LinearLayout {
+    var onClicked: (()-> Unit)? = null
     private val accountName: TextView by bindView(R.id.acount_name)
     private val accountEmail: TextView by bindView(R.id.acount_mail)
 
@@ -23,5 +24,7 @@ class AccountView: LinearLayout {
     fun showAccount(account: AccountModel) {
         accountName.text = account.name
         accountEmail.text = account.email
+
+        setOnClickListener { onClicked?.invoke() }
     }
 }
