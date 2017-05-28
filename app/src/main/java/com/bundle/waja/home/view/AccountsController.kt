@@ -1,13 +1,14 @@
 package com.bundle.waja.home.view
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.bluelinelabs.conductor.Controller
+import com.bluelinelabs.conductor.RouterTransaction
 import com.bundle.waja.R
 import com.bundle.waja.common.MVP
+import com.bundle.waja.details.view.AccountDetailsController
 import com.bundle.waja.home.AccountModel
 import com.bundle.waja.home.AccountsPresenter
 
@@ -34,7 +35,7 @@ class AccountsController : Controller(), AccountScreen {
     }
 
     private fun showAccountDetails(account: AccountModel){
-        Log.i("AccountController", "account: ${account.name} ${account.email}")
+        val controller = AccountDetailsController.create(account)
+        router.pushController(RouterTransaction.with(controller))
     }
 }
-
