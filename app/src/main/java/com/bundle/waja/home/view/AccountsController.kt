@@ -24,7 +24,7 @@ class AccountsController : Controller(), AccountScreen {
         val view = inflater.inflate(R.layout.accounts_controller, container, false) as LinearLayout
         val accountListView = view.findViewById(R.id.accounts_list) as AccountsListView
         accountListView.onAccountClicked = { showAccountDetails(it)}
-        
+
         presenter.onViewReady()
 
         return  view
