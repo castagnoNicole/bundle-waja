@@ -1,5 +1,7 @@
 package com.bundle.waja.home.view
 
+import android.support.design.widget.CoordinatorLayout
+import android.support.design.widget.FloatingActionButton
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,10 +22,11 @@ class AccountsController : Controller(), AccountScreen {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         presenter.view = this
-        val view = inflater.inflate(R.layout.accounts_controller, container, false) as LinearLayout
+        val view = inflater.inflate(R.layout.accounts_controller, container, false) as CoordinatorLayout
         val accountListView = view.findViewById(R.id.accounts_list) as AccountsListView
         accountListView.onAccountClicked = { showAccountDetails(it)}
-        
+        val addButton = view.findViewById(R.id.float_btn) as FloatingActionButton
+
         presenter.onViewReady()
 
         return  view
