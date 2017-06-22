@@ -4,9 +4,18 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import com.bundle.waja.home.view.model.AccountModel
+import com.bundle.waja.R
 
-class AccountAdapter(var accounts: List<AccountModel>): RecyclerView.Adapter<AccountAdapter.AccountViewHolder>() {
+class AccountAdapter(): RecyclerView.Adapter<AccountAdapter.AccountViewHolder>() {
     var onAccountClicked: ((AccountModel) -> Unit)? = null
+    val accounts =
+            listOf(
+                    AccountModel("Pino Caluso", "pippi@gmail.it", "password", R.drawable.ic_mood_fancy_inverted_5),AccountModel("Facebook", "gino@caluso.com", "password", R.drawable.ic_mood_fancy_inverted_5),
+                    AccountModel("Facebook", "pippi@gmail.it", "password", R.drawable.ic_mood_fancy_inverted_5),AccountModel("Facebook", "gino@caluso.com", "password", R.drawable.ic_mood_fancy_inverted_5),
+                    AccountModel("Facebook", "pippi@gmail.it", "password", R.drawable.ic_mood_fancy_inverted_5),AccountModel("Facebook", "gino@caluso.com", "password", R.drawable.ic_mood_fancy_inverted_5),
+                    AccountModel("Facebook", "pippi@gmail.it", "password", R.drawable.ic_mood_fancy_inverted_5),AccountModel("Facebook", "gino@caluso.com", "password", R.drawable.ic_mood_fancy_inverted_5),
+                    AccountModel("Facebook", "pippi@gmail.it", "password", R.drawable.ic_mood_fancy_inverted_5),AccountModel("Facebook", "gino@caluso.com", "password", R.drawable.ic_mood_fancy_inverted_5)
+            )
 
     class AccountViewHolder(private val view: AccountView, var onClick: (AccountModel)->Unit) : RecyclerView.ViewHolder(view){
         fun bindAccount(account: AccountModel){

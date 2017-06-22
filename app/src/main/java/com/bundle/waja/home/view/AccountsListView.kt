@@ -8,15 +8,7 @@ import com.bundle.waja.home.view.model.AccountModel
 
 class AccountsListView : RecyclerView {
     var onAccountClicked: ((AccountModel)-> Unit)? = null
-    private val accountAdapter = AccountAdapter(
-            listOf(
-                    AccountModel("Facebook", "pippi@gmail.it"), AccountModel("Facebook", "gino@caluso.com"),
-                    AccountModel("Facebook", "pippi@gmail.it"), AccountModel("Facebook", "gino@caluso.com"),
-                    AccountModel("Facebook", "pippi@gmail.it"), AccountModel("Facebook", "gino@caluso.com"),
-                    AccountModel("Facebook", "pippi@gmail.it"), AccountModel("Facebook", "gino@caluso.com"),
-                    AccountModel("Facebook", "pippi@gmail.it"), AccountModel("Facebook", "gino@caluso.com")
-            )
-    )
+    private val accountAdapter = AccountAdapter()
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attributes: AttributeSet) : super(context, attributes)
@@ -29,3 +21,4 @@ class AccountsListView : RecyclerView {
         addItemDecoration(AccountItemDecoration())
     }
 }
+//I'd probably do Presenter -> Controller -> View -> Adapter

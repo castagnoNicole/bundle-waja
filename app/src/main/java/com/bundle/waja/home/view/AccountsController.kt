@@ -2,7 +2,6 @@ package com.bundle.waja.home.view
 
 import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.FloatingActionButton
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import com.bundle.waja.R
 import com.bundle.waja.common.MVP
 import com.bundle.waja.create.CreateAccountController
 import com.bundle.waja.home.view.model.AccountModel
+import com.bundle.waja.details.view.AccountDetailsController
 import com.bundle.waja.home.AccountsPresenter
 
 interface AccountScreen : MVP.View {
@@ -39,7 +39,8 @@ class AccountsController : Controller(), AccountScreen {
     }
 
     private fun showAccountDetails(account: AccountModel){
-        Log.i("AccountController", "account: ${account.name} ${account.email}")
+        val controller = AccountDetailsController.create(account)
+        router.pushController(RouterTransaction.with(controller))
     }
 
     private fun showAddAccount(){
