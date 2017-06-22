@@ -3,7 +3,7 @@ package com.bundle.waja.home.view
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import com.bundle.waja.home.AccountModel
+import com.bundle.waja.home.view.model.AccountModel
 
 class AccountAdapter(var accounts: List<AccountModel>): RecyclerView.Adapter<AccountAdapter.AccountViewHolder>() {
     var onAccountClicked: ((AccountModel) -> Unit)? = null

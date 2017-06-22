@@ -6,11 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import com.bluelinelabs.conductor.Controller
+import com.bluelinelabs.conductor.RouterTransaction
 import com.bundle.waja.R
 import com.bundle.waja.common.MVP
-import com.bundle.waja.home.AccountModel
+import com.bundle.waja.create.CreateAccountController
+import com.bundle.waja.home.view.model.AccountModel
 import com.bundle.waja.home.AccountsPresenter
 
 interface AccountScreen : MVP.View {
@@ -26,6 +27,7 @@ class AccountsController : Controller(), AccountScreen {
         val accountListView = view.findViewById(R.id.accounts_list) as AccountsListView
         accountListView.onAccountClicked = { showAccountDetails(it)}
         val addButton = view.findViewById(R.id.float_btn) as FloatingActionButton
+        addButton.setOnClickListener { showAddAccount() }
 
         presenter.onViewReady()
 
@@ -38,6 +40,10 @@ class AccountsController : Controller(), AccountScreen {
 
     private fun showAccountDetails(account: AccountModel){
         Log.i("AccountController", "account: ${account.name} ${account.email}")
+    }
+
+    private fun showAddAccount(){
+        router.pushController(RouterTransaction.with(CreateAccountController()))
     }
 }
 

@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import butterknife.bindView
 import com.bundle.waja.R
-import com.bundle.waja.home.AccountModel
+import com.bundle.waja.home.view.model.AccountModel
 
 class AccountView: LinearLayout {
     var onClicked: (()-> Unit)? = null
