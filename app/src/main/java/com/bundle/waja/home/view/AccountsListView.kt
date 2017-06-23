@@ -1,7 +1,7 @@
 package com.bundle.waja.home.view
 
 import android.content.Context
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import com.bundle.waja.home.view.model.AccountModel
@@ -17,8 +17,8 @@ class AccountsListView : RecyclerView {
     init {
         accountAdapter.onAccountClicked = {onAccountClicked?.invoke(it)}
         adapter = accountAdapter
-        layoutManager = GridLayoutManager(context, 3)
-        addItemDecoration(AccountItemDecoration())
+        layoutManager = LinearLayoutManager(context, VERTICAL, false)
+        //addItemDecoration(AccountItemDecoration())
     }
 }
 //I'd probably do Presenter -> Controller -> View -> Adapter
