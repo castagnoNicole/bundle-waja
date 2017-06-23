@@ -19,6 +19,10 @@ interface AccountScreen : MVP.View {
 }
 
 class AccountsController : Controller(), AccountScreen {
+    init {
+        retainViewMode = RetainViewMode.RETAIN_DETACH//mantieni in memoria la vista quando viene detach
+    }
+
     private val presenter = AccountsPresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {

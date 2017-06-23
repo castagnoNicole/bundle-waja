@@ -9,8 +9,11 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.bluelinelabs.conductor.Controller
 import com.bundle.waja.R
+import com.bundle.waja.home.data.RealmAccount
+import io.realm.Realm
+import io.realm.RealmObject
 
-class CreateAccountController: Controller() {
+class CreateAccountController : Controller() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.view_create_account, container, false) as LinearLayout
@@ -24,9 +27,16 @@ class CreateAccountController: Controller() {
         return view
     }
 
-    fun saveAccount(type: String, email: String, password: String){
+    fun saveAccount(type: String, email: String, password: String) {
+        val realm: Realm = Realm.getDefaultInstance()
         val toast = Toast.makeText(activity!!, "${type}, ${email}, $password", Toast.LENGTH_SHORT)
         toast.show()
+
+        realm.beginTransaction()
+        val newAccount: RealmObject = RealmAccount(email, type, password, R.drawable.ic_mood_fancy_inverted_5)
+        realm.copyToRealm(newAccount)
+        realm.commitTransaction()
+        realm.close()
     }
 
 }
