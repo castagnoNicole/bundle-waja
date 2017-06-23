@@ -11,8 +11,8 @@ import com.bundle.waja.home.view.model.AccountModel
 
 class AccountView: LinearLayout {
     var onClicked: (()-> Unit)? = null
-    private val accountType: ImageView by bindView(R.id.acount_name)
-    private val accountEmail: TextView by bindView(R.id.acount_mail)
+    private val accountType: ImageView by bindView(R.id.account_image)
+    private val accountEmail: TextView by bindView(R.id.account_mail)
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attributes: AttributeSet) : super(context, attributes)
