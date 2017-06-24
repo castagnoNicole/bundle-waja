@@ -51,4 +51,3 @@ class AccountsController : Controller(), AccountScreen {
         router.pushController(RouterTransaction.with(CreateAccountController()))
     }
 }
-

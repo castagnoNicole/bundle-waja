@@ -14,8 +14,7 @@ import com.bluelinelabs.conductor.Controller
 import com.bundle.waja.R
 import com.bundle.waja.common.MVP
 import com.bundle.waja.details.presenter.AccountDetailsPresenter
-import com.bundle.waja.home.AccountModel
-
+import com.bundle.waja.home.view.model.AccountModel
 
 interface AccountDetailsScreen :MVP.View {
     fun showEditAccount()
